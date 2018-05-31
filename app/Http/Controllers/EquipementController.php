@@ -25,7 +25,7 @@ class EquipementController extends Controller
      */
     public function create()
     {
-        //
+        return view('equipement.create');
     }
 
     /**
@@ -36,7 +36,24 @@ class EquipementController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $addequip = Equipement::create([
+            'appareil' => $request->input('appareil'),
+            'code' => $request->input('code'),
+            'fabricant' => $request->input('fabricant'),
+            'type' => $request->input('type'),
+            'serie' => $request->input('serie'),
+            'societeContacter' => $request->input('societerContacter'),
+            'dateInstallation' => $request->input('dateInstallation'),
+            'documentTechDispo' => $request->input('documentTechDispo'),
+            'salle' => $request->input('salle'),
+            'commentaire' => $request->input('commentaire'),
+            'dateQualification' => $request->input('dateQualification'),
+                        
+        ]);
+
+        if($addequip){
+            return redirect()->route('equipement.index', ['equipements' => $addequip->id])->with('success', 'Reactif modifié avec succés');
+        }
     }
 
     /**

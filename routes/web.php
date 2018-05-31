@@ -41,3 +41,4 @@ Route::group(['middleware' =>['auth']],function(){
 Route::get('/logout', 'AdminController@logout');
 
 Route::resource('equipement', 'EquipementController');
+Route::resource('Reception', 'ReceptionController');

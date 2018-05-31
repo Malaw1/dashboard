@@ -4,10 +4,10 @@
 
 						<div class="page-header">
 							<h1>
-								jqGrid
+								Equipement
 								<small>
 									<i class="ace-icon fa fa-angle-double-right"></i>
-									Dynamic tables and grids using jqGrid plugin
+									Liste des Equipements
 								</small>
 							</h1>
 						</div><!-- /.page-header -->
@@ -67,14 +67,14 @@
 		<script type="text/javascript">
 			var grid_data = 
 			[ 
-               	{id:"1",appareil:"Desktop Computer",note:"note",stock:"Yes",ship:"FedEx", sdate:"2007-12-03"},
-				{id:"2",name:"Laptop",note:"Long text ",stock:"Yes",ship:"InTime",sdate:"2007-12-03"},
-				{id:"3",name:"LCD Monitor",note:"note3",stock:"Yes",ship:"TNT",sdate:"2007-12-03"},
-				{id:"4",name:"Speakers",note:"note",stock:"No",ship:"ARAMEX",sdate:"2007-12-03"},
-				{id:"5",name:"Laser Printer",note:"note2",stock:"Yes",ship:"FedEx",sdate:"2007-12-03"},
-				{id:"6",name:"Play Station",note:"note3",stock:"No", ship:"FedEx",sdate:"2007-12-03"},
-				{id:"7",name:"Mobile Telephone",note:"note",stock:"Yes",ship:"ARAMEX",sdate:"2007-12-03"},
-				{id:"8",name:"Server",note:"note2",stock:"Yes",ship:"TNT",sdate:"2007-12-03"},
+               	{id:"1",appareil:"Bain Marie",code:"note",type:"Yes",serie:"FedEx", fabricant:"2007-12-03", dateProchaineQualif:"Date", etat: "hello", emplacement: "Salle 01", commentaire: "Hello Wolrd"},
+				{id:"2",appareil:"Laptop",code:"Long text ",type:"Yes",serie:"InTime",fabricant:"2007-12-03", dateProchaineQualif:"Date", etat: "hello", emplacement: "Salle 01", commentaire: "Hello Wolrd"},
+				{id:"3",appareil:"LCD Monitor",code:"note3",type:"Yes",serie:"TNT",fabricant:"2007-12-03", dateProchaineQualif:"Date", etat: "hello", emplacement: "Salle 01", commentaire: "Hello Wolrd"},
+				{id:"4",appareil:"Speakers",code:"note",type:"No",serie:"ARAMEX",fabricant:"2007-12-03", dateProchaineQualif:"Date", etat: "hello", emplacement: "Salle 01", commentaire: "Hello Wolrd"},
+				{id:"5",appareil:"Laser Printer",code:"note2",type:"Yes",serie:"FedEx",fabricant:"2007-12-03", dateProchaineQualif:"Date", etat: "hello", emplacement: "Salle 01", commentaire: "Hello Wolrd"},
+				{id:"6",appareil:"Play Station",code:"note3",type:"No", serie:"FedEx",fabricant:"2007-12-03", dateProchaineQualif:"Date", etat: "hello", emplacement: "Salle 01", commentaire: "Hello Wolrd"},
+				{id:"7",appareil:"Mobile Telephone",code:"note",type:"Yes",serie:"ARAMEX",fabricant:"2007-12-03", dateProchaineQualif:"Date", etat: "hello", emplacement: "Salle 01", commentaire: "Hello Wolrd"},
+				{id:"8",appareil:"Server",code:"note2",type:"Yes",serie:"TNT",fabricant:"2007-12-03", dateProchaineQualif:"Date", etat: "hello", emplacement: "Salle 01", commentaire: "Hello Wolrd"},
 				
 			];
             
@@ -164,7 +164,7 @@
 					data: grid_data,
 					datatype: "local",
 					height: 350,
-					colNames:[' ', 'ID','Appareil','Code', 'Fabricant', 'Prochaine Qualif','etat', 'Emplacement', 'Commentaires'],
+					colNames:[' ', 'ID','Appareil','Code', 'Type', 'N° Serie', 'Fabricant', 'Prochaine Qualif','etat', 'Emplacement', 'Commentaires'],
 
 					colModel:[
 						{name:'myac',index:'', width:80, fixed:true, sortable:false, resize:false,
@@ -180,6 +180,8 @@
 						{name:'id',index:'id', width:5, sorttype:"int", editable: true},
 						{name:'appareil',index:'appareil', width:10,editable: true,editoptions:{size:"20",maxlength:"30"}},
 						{name:'code',index:'code', width:10, editable: true},
+						{name:'type',index:'type', width:10, editable: true},
+						{name:'serie',index:'serie', width:10, editable: true},
 						{name:'fabricant',index:'fabricant', width:10, editable: true},
                         {name:'dateProchaineQualif',index:'dateProchaineQualif',width:10, editable:true, sorttype:"date",unformat: pickDate},
                         {name:'etat',index:'etat', width:10,editable: true,edittype:"select",editoptions:{value:"Q:Qualifie;NQ:Non Qualifie;"}},

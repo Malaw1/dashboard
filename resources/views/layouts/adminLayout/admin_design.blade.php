@@ -11,12 +11,10 @@
 		<link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}" />
 		<link rel="stylesheet" href="{{ asset('font-awesome/4.5.0/css/font-awesome.min.css') }}" />
 		<link rel="stylesheet" href="{{ asset('css/fonts.googleapis.com.css') }}" />
-		<link rel="stylesheet" href="{{ asset('css/ace.min.css') }}" class="ace-main-stylesheet" id="main-ace-style" />
 		<link rel="stylesheet" href="{{ asset('css/ace-part2.min.css" class="ace-main-stylesheet') }}" />
 		<link rel="stylesheet" href="{{ asset('css/ace-skins.min.css') }}" />
 		<link rel="stylesheet" href="{{ asset('css/ace-rtl.min.css') }}" />
 		<link rel="stylesheet" href="{{ asset('css/jquery-ui.min.css') }}" />
-		<link rel="stylesheet" href="{{ asset('css/bootstrap-datepicker3.min.css') }}" />
 		<link rel="stylesheet" href="{{ asset('css/ui.jqgrid.min.css') }}" />
 		<link rel="stylesheet" href="{{ asset('css/fonts.googleapis.com.css') }}" />
 		<link rel="stylesheet" href="{{ asset('css/ace.min.css') }}" class="ace-main-stylesheet" id="main-ace-style" />
@@ -24,11 +22,23 @@
 		<link rel="stylesheet" href="{{ asset('css/ace-skins.min.css') }}" />
 		<link rel="stylesheet" href="{{ asset('css/ace-rtl.min.css') }}" />
 		<link rel="stylesheet" href="{{ asset('css/ace-ie.min.css') }}" />
+		<link rel="stylesheet" href="{{ asset('css/jquery-ui.custom.min.css') }}" />
+		<link rel="stylesheet" href="{{ asset('css/chosen.min.css') }}" />
+		<link rel="stylesheet" href="{{ asset('css/bootstrap-datepicker3.min.css') }}" />
+		<link rel="stylesheet" href="{{ asset('css/bootstrap-timepicker.min.css') }}" />
+		<link rel="stylesheet" href="{{ asset('css/daterangepicker.min.css') }}" />
+		<link rel="stylesheet" href="{{ asset('css/bootstrap-datetimepicker.min.css') }}" />
+		<link rel="stylesheet" href="{{ asset('css/bootstrap-colorpicker.min.css') }}" />
+		<link rel="stylesheet" href="{{ asset('css/ace-skins.min.css') }}" />
+		<link rel="stylesheet" href="{{ asset('css/ace-rtl.min.css') }}" />
+
+
 		<script src="{{ asset('js/ace-extra.min.js') }}"></script>
 		<link rel="stylesheet" href="{{ asset('css/ace-ie.min.css') }}" />
 		<script src="{{ asset('js/ace-extra.min.js') }}"></script>
 		<script src="{{ asset('js/html5shiv.min.js') }}"></script>
 		<script src="{{ asset('js/respond.min.js') }}"></script>
+		<script src="{{ asset('js/ace-extra.min.js') }}"></script>
 		
 	</head>
 
@@ -677,8 +687,8 @@
 				<div class="footer-inner">
 					<div class="footer-content">
 						<span class="bigger-120">
-							<span class="blue bolder">Ace</span>
-							Application &copy; 2013-2014
+							<span class="blue bolder">LABORATOIRE NATIONAL DE CONTROLE DES MEDICAMENTS</span>
+							 &copy; 2018
 						</span>
 
 						&nbsp; &nbsp;
@@ -712,7 +722,7 @@
 		<!-- <![endif]-->
 
 		<!--[if IE]>
-<script src="assets/js/jquery-1.11.3.min.js"></script>
+<script src="{{ asset('js/jquery-1.11.3.min.js') }}"></script>
 <![endif]-->
 		<script type="text/javascript">
 			if('ontouchstart' in document.documentElement) document.write("<script src='{{ asset('js/jquery.mobile.custom.min.js') }}>"+"<"+"/script>");
@@ -722,7 +732,7 @@
 		<!-- page specific plugin scripts -->
 
 		<!--[if lte IE 8]>
-		  <script src="assets/js/excanvas.min.js"></script>
+		  <script src="{{ asset('js/excanvas.min.js') }}"></script>
 		<![endif]-->
 		<script src="{{ asset('js/jquery-ui.custom.min.js') }}"></script>
 		<script src="{{ asset('/js/jquery.ui.touch-punch.min.js') }}"></script>
@@ -731,7 +741,7 @@
 		<script src="{{ asset('js/jquery.flot.min.js') }}"></script>
 		<script src="{{ asset('js/jquery.flot.pie.min.js') }}"></script>
 		<script src="{{ asset('js/jquery.flot.resize.min.js') }}"></script>
-		<script src="assets/js/bootstrap.min.js"></script>
+		<script src="{{ asset('js/bootstrap.min.js') }}"></script>
 
 		<!-- page specific plugin scripts -->
 		<script src="{{ asset('js/bootstrap-datepicker.min.js') }}"></script>
@@ -742,11 +752,27 @@
 		<script src="{{ asset('js/ace-elements.min.js') }}"></script>
 		<script src="{{ asset('js/ace.min.js') }}"></script>
 
+		<script src="{{ asset('js/jquery-ui.custom.min.js') }}"></script>
+		<script src="{{ asset('js/jquery.ui.touch-punch.min.js') }}"></script>
+		<script src="{{ asset('js/chosen.jquery.min.js') }}"></script>
+		<script src="{{ asset('js/spinbox.min.js') }}"></script>
+		<script src="{{ asset('js/bootstrap-datepicker.min.js') }}"></script>
+		<script src="{{ asset('js/bootstrap-timepicker.min.js') }}"></script>
+		<script src="{{ asset('js/moment.min.js') }}"></script>
+		<script src="{{ asset('js/daterangepicker.min.js') }}"></script>
+		<script src="{{ asset('js/bootstrap-datetimepicker.min.js') }}"></script>
+		<script src="{{ asset('js/bootstrap-colorpicker.min.js') }}"></script>
+		<script src="{{ asset('js/jquery.knob.min.js') }}"></script>
+		<script src="{{ asset('js/autosize.min.js') }}"></script>
+		<script src="{{ asset('js/jquery.inputlimiter.min.js') }}"></script>
+		<script src="{{ asset('js/jquery.maskedinput.min.js') }}"></script>
+		<script src="{{ asset('js/bootstrap-tag.min.js') }}"></script>
 
 		<!-- ace scripts -->
 		<script src="{{ asset('js/ace-elements.min.js') }}"></script>
 		<script src="{{ asset('js/ace.min.js') }}"></script>
-
+		<script src="{{ asset('js/jquery-ui.min.js') }}"></script>
+		<script src="{{ asset('js/jquery.ui.touch-punch.min.js') }}"></script>
 		<!-- inline scripts related to this page -->
 		<script type="text/javascript">
 			jQuery(function($) {
