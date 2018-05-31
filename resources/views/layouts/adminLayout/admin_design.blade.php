@@ -56,7 +56,7 @@
 				</button>
 
 				<div class="navbar-header pull-left">
-					<a href="index.html" class="navbar-brand">
+					<a href="{{ url('/admin/dashboard') }}" class="navbar-brand">
 						<small>
 							<i class="fa fa-leaf"></i>
 							laboLims LNCM
@@ -404,7 +404,7 @@
 
 				<ul class="nav nav-list">
 					<li class="active">
-						<a href="index.html">
+						<a href="{{ url('/admin/dashboard') }}">
 							<i class="menu-icon fa fa-tachometer"></i>
 							<span class="menu-text"> Dashboard </span>
 						</a>
