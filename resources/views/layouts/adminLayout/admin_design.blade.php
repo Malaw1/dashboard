@@ -7,7 +7,6 @@
 
 		<meta name="description" content="" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
-
 		<link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}" />
 		<link rel="stylesheet" href="{{ asset('font-awesome/4.5.0/css/font-awesome.min.css') }}" />
 		<link rel="stylesheet" href="{{ asset('css/fonts.googleapis.com.css') }}" />
@@ -31,6 +30,7 @@
 		<link rel="stylesheet" href="{{ asset('css/bootstrap-colorpicker.min.css') }}" />
 		<link rel="stylesheet" href="{{ asset('css/ace-skins.min.css') }}" />
 		<link rel="stylesheet" href="{{ asset('css/ace-rtl.min.css') }}" />
+		<link rel="stylesheet" href="{{ asset('css/select2.min.css') }}" />
 
 
 		<script src="{{ asset('js/ace-extra.min.js') }}"></script>
@@ -39,7 +39,12 @@
 		<script src="{{ asset('js/html5shiv.min.js') }}"></script>
 		<script src="{{ asset('js/respond.min.js') }}"></script>
 		<script src="{{ asset('js/ace-extra.min.js') }}"></script>
-		
+		<script src="{{ asset('js/wizard.min.js') }}"></script>
+		<script src="{{ asset('js/jquery.validate.min.js') }}"></script>
+		<script src="{{ asset('js/jquery-additional-methods.min.js') }}"></script>
+		<script src="{{ asset('js/bootbox.js') }}"></script>
+		<script src="{{ asset('js/jquery.maskedinput.min.js') }}"></script>
+		<script src="{{ asset('js/select2.min.js') }}"></script>	
 	</head>
 
 	<body class="no-skin">
@@ -752,7 +757,6 @@
 		<script src="{{ asset('js/ace-elements.min.js') }}"></script>
 		<script src="{{ asset('js/ace.min.js') }}"></script>
 
-		<script src="{{ asset('js/jquery-ui.custom.min.js') }}"></script>
 		<script src="{{ asset('js/jquery.ui.touch-punch.min.js') }}"></script>
 		<script src="{{ asset('js/chosen.jquery.min.js') }}"></script>
 		<script src="{{ asset('js/spinbox.min.js') }}"></script>
@@ -767,7 +771,13 @@
 		<script src="{{ asset('js/jquery.inputlimiter.min.js') }}"></script>
 		<script src="{{ asset('js/jquery.maskedinput.min.js') }}"></script>
 		<script src="{{ asset('js/bootstrap-tag.min.js') }}"></script>
-
+		<script src="{{ asset('js/wizard.min.js') }}"></script>
+		<script src="{{ asset('js/jquery.validate.min.js') }}"></script>
+		<script src="{{ asset('js/jquery-additional-methods.min.js') }}"></script>
+		<script src="{{ asset('js/bootbox.js') }}"></script>
+		<script src="{{ asset('js/jquery.maskedinput.min.js') }}"></script>
+		<script src="{{ asset('js/select2.min.js') }}"></script>
+		
 		<!-- ace scripts -->
 		<script src="{{ asset('js/ace-elements.min.js') }}"></script>
 		<script src="{{ asset('js/ace.min.js') }}"></script>

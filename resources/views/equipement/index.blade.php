@@ -66,16 +66,14 @@
 		<!-- inline scripts related to this page -->
 		<script type="text/javascript">
 			var grid_data = 
-			[ 
-               	{id:"1",appareil:"Bain Marie",code:"note",type:"Yes",serie:"FedEx", fabricant:"2007-12-03", dateProchaineQualif:"Date", etat: "hello", emplacement: "Salle 01", commentaire: "Hello Wolrd"},
-				{id:"2",appareil:"Laptop",code:"Long text ",type:"Yes",serie:"InTime",fabricant:"2007-12-03", dateProchaineQualif:"Date", etat: "hello", emplacement: "Salle 01", commentaire: "Hello Wolrd"},
-				{id:"3",appareil:"LCD Monitor",code:"note3",type:"Yes",serie:"TNT",fabricant:"2007-12-03", dateProchaineQualif:"Date", etat: "hello", emplacement: "Salle 01", commentaire: "Hello Wolrd"},
-				{id:"4",appareil:"Speakers",code:"note",type:"No",serie:"ARAMEX",fabricant:"2007-12-03", dateProchaineQualif:"Date", etat: "hello", emplacement: "Salle 01", commentaire: "Hello Wolrd"},
-				{id:"5",appareil:"Laser Printer",code:"note2",type:"Yes",serie:"FedEx",fabricant:"2007-12-03", dateProchaineQualif:"Date", etat: "hello", emplacement: "Salle 01", commentaire: "Hello Wolrd"},
-				{id:"6",appareil:"Play Station",code:"note3",type:"No", serie:"FedEx",fabricant:"2007-12-03", dateProchaineQualif:"Date", etat: "hello", emplacement: "Salle 01", commentaire: "Hello Wolrd"},
-				{id:"7",appareil:"Mobile Telephone",code:"note",type:"Yes",serie:"ARAMEX",fabricant:"2007-12-03", dateProchaineQualif:"Date", etat: "hello", emplacement: "Salle 01", commentaire: "Hello Wolrd"},
-				{id:"8",appareil:"Server",code:"note2",type:"Yes",serie:"TNT",fabricant:"2007-12-03", dateProchaineQualif:"Date", etat: "hello", emplacement: "Salle 01", commentaire: "Hello Wolrd"},
-				
+			[
+				@foreach ($equip as $equip)
+					{id:["{{ $equip->id }}"], appareil:["{{ $equip->appareil }}"], code:["{{ $equip->code }}"], 
+					type:["{{ $equip->type }}"], serie:["{{ $equip->serie }}"], fabricant:["{{ $equip->fabricant }}"],
+					dateProchaineQualif:["{{ $equip->dateQualification }}"], etat:["{{ $equip->etat }}"],
+					emplacement:["{{ $equip->salle }}"], emplacement:["{{ $equip->salle }}"], commentaire:["{{ $equip->commentaires }}"],
+					},
+				@endforeach
 			];
             
 			
@@ -191,7 +189,7 @@
 			
 					viewrecords : true,
 					rowNum:10,
-					rowList:[10,20,30],
+					rowList:[10,20,30, 40],
 					pager : pager_selector,
 					altRows: true,
 					//toppager: true,
@@ -212,7 +210,7 @@
 					},
 			
 					editurl: "./dummy.php",//nothing is saved
-					caption: "jqGrid with inline editing"
+					caption: "Tableau Dynamique des Equipements"
 			
 					//,autowidth: true,
 			
@@ -289,6 +287,12 @@
 						closeAfterAdd: true,
 						recreateForm: true,
 						viewPagerButtons: false,
+						mtype: 'POST',
+						url: '@Url.Action("GetData", "EquipementsController.store")',
+						{{-- url: "{{ route('EquipementsController.store') }}" --}}
+						{{-- onclickSubmit: function(params, postdata){
+							params.url :
+						}, --}}
 						beforeShowForm : function(e) {
 							var form = $(e[0]);
 							form.closest('.ui-jqdialog').find('.ui-jqdialog-titlebar')
@@ -296,6 +300,8 @@
 							style_edit_form(form);
 						}
 					},
+
+					{{-- Corei7Gen8# --}}
 					{
 						//delete record form
 						recreateForm: true,

@@ -27,7 +27,7 @@ class AnalysesController extends Controller
      */
     public function create()
     {
-        //
+        return view('analyses.create');
     }
 
     /**
