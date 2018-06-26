@@ -13,7 +13,7 @@
 
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('admin/admin_login');
 });
 
 Route::match(['get','post'], '/admin', 'AdminController@login');
@@ -28,17 +28,19 @@ Route::group(['middleware' =>['auth']],function(){
 	Route::get('/admin/settings', 'AdminController@settings');
 	Route::get('/admin/check-pwd', 'AdminController@chkPassword');
 	Route::match(['get','post'], '/admin/update-pwd', 'AdminController@updatePassword');
-	Route::get('/admin/echantillons/index_echan', 'AdminController@index_echan');	
+	//Route::get('/admin/echantillons/index_echan', 'AdminController@index_echan');	
 	/*Route::get('admin/users', 'AdminController@user');*/
 
 	//Echantillons Routes (Admin)
 
-	Route::match(['get','post'],'/admin/add-echantillon', 'EchantillonController@addEchanillon');
-	Route::match(['get','post'], '/admin/modifier-echantillon/{id}', 'EchantillonController@modifierEchantillons');
-	Route::get('/admin/voir-echantillon', 'EchantillonController@voirEchantillons');
+	//Route::match(['get','post'],'/admin/add-echantillon', 'EchantillonsController@create');
+	Route::match(['get','post'], '/admin/modifier-echantillon/{id}', 'EchantillonsController@modifierEchantillons');
+//	Route::get('/admin/voir-echantillon', 'EchantillonsController@index');
 	});
 
 Route::get('/logout', 'AdminController@logout');
+
+Route::get('echantillons', 'EchantilonsController@getEchan');
 
 Route::resource('equipement', 'EquipementController');
 Route::resource('Reception', 'ReceptionController');
@@ -53,3 +55,4 @@ Route::resource('unite', 'UnitesController');
 Route::resource('analyses', 'AnalysesController');
 Route::resource('reception', 'ReceptionController');
 Route::resource('equipements', 'EquipementsController');
+Route::resource('echantillons', 'EchantillonsController');

@@ -103,7 +103,7 @@ class ReactifsController extends Controller
             'designation' => $request->input('designation'),
             'conditionnement' => $request->input('conditionnement'),
             'lot' => $request->input('lot'),
-            'fabriquant' => $request->input('fabriquant'),
+            'fabriquant' => $request->input('fabricant'),
             'quantite' => $request->input('quantite'),
             'dateFab' => $request->input('dateFab'),
             'dateExp' => $request->input('dateExp'),

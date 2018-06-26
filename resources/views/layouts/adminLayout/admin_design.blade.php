@@ -3,7 +3,7 @@
 	<head>
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 		<meta charset="utf-8" />
-		<title>laboLims - Acceuil</title>
+		<title>LABOLIMS - LNCM</title>
 
 		<meta name="description" content="" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
@@ -31,7 +31,7 @@
 		<link rel="stylesheet" href="{{ asset('css/ace-skins.min.css') }}" />
 		<link rel="stylesheet" href="{{ asset('css/ace-rtl.min.css') }}" />
 		<link rel="stylesheet" href="{{ asset('css/select2.min.css') }}" />
-
+		<link rel="stylesheet" href="{{ asset('css/dataTables.bootstrap.min.css') }}" />
 
 		<script src="{{ asset('js/ace-extra.min.js') }}"></script>
 		<link rel="stylesheet" href="{{ asset('css/ace-ie.min.css') }}" />
@@ -45,6 +45,8 @@
 		<script src="{{ asset('js/bootbox.js') }}"></script>
 		<script src="{{ asset('js/jquery.maskedinput.min.js') }}"></script>
 		<script src="{{ asset('js/select2.min.js') }}"></script>	
+		<script src="{{ asset('js/dataTables.bootstrap.min') }}"></script>
+		<script src="{{ asset('js/jquery-3.3.1') }}"></script>
 	</head>
 
 	<body class="no-skin">
@@ -418,7 +420,7 @@
 					</li>
 
 					<li class="">
-						<a href="widgets.html">
+						<a href="{{ url('/Reception') }}">
 							<i class="menu-icon fa fa-desktop"></i>
 							<span class="menu-text"> Reception </span>
 						</a>
@@ -438,7 +440,7 @@
 
 						<ul class="submenu">
 							<li class="">
-								<a href="{{ url('/admin/add-echantillon') }}">
+								<a href="{{ url('/echantillons/create') }}">
 									<i class="menu-icon fa fa-caret-right"></i>
 									Nouvel Echantillon
 								</a>
@@ -447,7 +449,7 @@
 							</li>
 
 							<li class="">
-								<a href="{{ url('/admin/voir-echantillon') }}">
+								<a href="{{ url('echantillons/') }}">
 									<i class="menu-icon fa fa-caret-right"></i>
 									Liste Echantillons
 								</a>
@@ -460,7 +462,7 @@
 					<li class="">
 						<a href="#" class="dropdown-toggle">
 							<i class="menu-icon fa fa-pencil-square-o"></i>
-							<span class="menu-text"> Analyses &amp; Tests </span>
+							<span class="menu-text"> Analyses </span>
 
 							<b class="arrow fa fa-angle-down"></b>
 						</a>
@@ -480,14 +482,14 @@
 							<li class="">
 								<a href="/tests/">
 									<i class="menu-icon fa fa-caret-right"></i>
-									Tests
+									Types d'analyses
 								</a>
 
 								<b class="arrow"></b>
 							</li>
 
 							<li class="">
-								<a href="form-wizard.html">
+								<a href="#">
 									<i class="menu-icon fa fa-caret-right"></i>
 									Methodes
 								</a>
@@ -496,7 +498,7 @@
 							</li>
 
 							<li class="">
-								<a href="wysiwyg.html">
+								<a href="#">
 									<i class="menu-icon fa fa-caret-right"></i>
 									Pharmacopee
 								</a>
@@ -517,7 +519,7 @@
 					</li>
 
 					<li class="">
-						<a href="calendar.html">
+						<a href="#">
 							<i class="menu-icon fa fa-calendar"></i>
 
 							<span class="menu-text">
@@ -529,7 +531,7 @@
 					</li>
 
 					<li class="">
-						<a href="gallery.html">
+						<a href="#">
 							<i class="menu-icon fa fa-group"></i>
 							<span class="menu-text"> Personnel </span>
 						</a>
@@ -549,7 +551,7 @@
 
 						<ul class="submenu">
 							<li class="">
-								<a href="profile.html">
+								<a href="#">
 									<i class="menu-icon fa fa-caret-right"></i>
 									Substances de References
 								</a>
@@ -558,7 +560,7 @@
 							</li>
 
 							<li class="">
-								<a href="inbox.html">
+								<a href="{{ url('reactifs/') }}">
 									<i class="menu-icon fa fa-caret-right"></i>
 									Reactifs
 								</a>
@@ -567,7 +569,7 @@
 							</li>
 
 							<li class="">
-								<a href="pricing.html">
+								<a href="{{ url('echantillons/') }}">
 									<i class="menu-icon fa fa-caret-right"></i>
 									Echantillons
 								</a>
@@ -576,7 +578,7 @@
 							</li>
 
 							<li class="">
-								<a href="invoice.html">
+								<a href="#">
 									<i class="menu-icon fa fa-caret-right"></i>
 									Materiels &amp; Verrerie
 								</a>
@@ -585,7 +587,7 @@
 							</li>
 
 							<li class="">
-								<a href="timeline.html">
+								<a href="#">
 									<i class="menu-icon fa fa-caret-right"></i>
 									Matieres Premieres
 								</a>

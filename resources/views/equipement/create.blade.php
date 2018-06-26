@@ -107,6 +107,26 @@
         </div>
 
         <div class="form-group">
+            <label class="col-sm-3 control-label no-padding-right" for="form-field-1"> Qualification </label>
+
+            <div class="col-sm-9">
+                <div class="radio">
+                    <label>
+                        <input name="etat" type="radio" class="ace" />
+                        <span class="lbl"> Qualifié</span>
+                    </label>
+                </div>
+
+                <div class="radio">
+                    <label>
+                        <input name="etat" type="radio" class="ace" />
+                        <span class="lbl"> Non Qualifié</span>
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
             <label class="col-sm-3 control-label no-padding-right" for="form-field-1"> Commentaires </label>
 
             <div class="col-sm-9">

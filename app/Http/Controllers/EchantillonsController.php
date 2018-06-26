@@ -14,7 +14,8 @@ class EchantillonsController extends Controller
      */
     public function index()
     {
-        //
+        $echantillons = echantillon::All();
+        return view('echantillons.index', ['echantillons' => $echantillons]);
     }
 
     /**
@@ -24,7 +25,9 @@ class EchantillonsController extends Controller
      */
     public function create()
     {
-        //
+        $echantillons = echantillon::select('id')->Where('enregistrement', '=', 0)->get()->Last();
+        //dd($echantillons);
+        return view('echantillons.create', ['echantillons'=>$echantillons]);
     }
 
     /**
@@ -35,7 +38,21 @@ class EchantillonsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $addEcha = Echantillon::create([
+            'nomProduit' => $request->input('nomProduit'),
+            'dateRecu' => $request->input('dateRecep'),
+            'type' => $request->input('type'),
+            'code' => $request->input('code'),
+            'formeGalenique' => $request->input('formeGalenique'),
+            'quantiteRecu' => $request->input('quantiteRecu'),
+            'dateFab' => $request->input('dateFab'),
+            'dateExp' => $request->input('dateExp'),
+            'lieuPrelevement' => $request->input('lieuPrelevement'),
+             ]);
+
+        if($addEcha){
+            return redirect()->route('echantillons.index', ['echantillons'=>$addEcha->id])->with('success', 'Reactifs ajouté avec succés');
+        }
     }
 
     /**
@@ -69,7 +86,9 @@ class EchantillonsController extends Controller
      */
     public function update(Request $request, Echantillon $echantillon)
     {
-        //
+        $reactifUpdate = Reactif::where('id', $reactif->id)->update([
+
+        ]);
     }
 
     /**

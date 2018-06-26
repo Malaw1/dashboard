@@ -3,19 +3,19 @@
 
 			<div class="page-header">
 				<h1>
-					Reactifs
+					Echantillons
 					<small>
 						<i class="ace-icon fa fa-angle-double-right"></i>
-						Liste des Reactifs
+						Liste des Echantillons
 					</small>
 				</h1>
 			</div><!-- /.page-header -->
 
 			<div class="row">
 				<div class="col-xs-12">
-					<!-- PAGE CONTENT BEGINS -->
 
-					<a href="{{url('reactifs/create')}}" class="btn btn-primary">Nouveau Reactif</a>
+                <a href="{{url('echantillons/create')}}" class="btn btn-primary">Nouvel Echantillon</a>
+					<!-- PAGE CONTENT BEGINS -->
 					{{-- <div class="alert alert-info">
 						<button class="close" data-dismiss="alert">
 							<i class="ace-icon fa fa-times"></i>
@@ -68,19 +68,18 @@
 		<script type="text/javascript">
 			var grid_data = 
 			[
-				@foreach ($reactifs as $reactifs)
-					{   
-                        id:["{{ $reactifs->id }}"], 
-                        designation:["{{ $reactifs->designation }}"],
-                        conditionnement:["{{ $reactifs->conditionnement }}"],
-                        lot:["{{ $reactifs->lot }}"],
-                        fabricant:["{{ $reactifs->fabricant }}"],
-                        quantite:["{{ $reactifs->quantite }}"],
-                        dateFab:["{{ $reactifs->dateFab }}"],
-                        dateExp:["{{ $reactifs->dateExp }}"],
-                        dateRecu:["{{ $reactifs->created_at }}"],
-                        utilise:["{{ $reactifs->quantiteUtilise }}"],
-                        restant:["{{ $reactifs->quantite - $reactifs->quantiteUtilise}}"],
+				@foreach ($echantillons as $echantillons)
+					{id:["{{ $echantillons->id }}"], 
+                    code:["{{ $echantillons->code }}"],
+                    nomProduit:["{{ $echantillons->nomProduit }}"], 
+                    dateRecu:["{{ $echantillons->dateRecu }}"], 
+                    type:["{{ $echantillons->type }}"],
+                    formeGalenique:["{{ $echantillons->formeGalenique }}"], 
+                    quantiteRecu:["{{ $echantillons->quantiteRecu }}"], 
+                    dateFab:["{{ $echantillons->dateFab }}"],
+					dateExp:["{{ $echantillons->dateExp }}"],
+                    lieuPrelevement:["{{ $echantillons->lieuPrelevement }}"],
+					status:["{{ $echantillons->status }}"],
 					},
 				@endforeach
 			];
@@ -88,7 +87,14 @@
 			
 			var subgrid_data = 
 			[
-			 
+			 {{-- {id:"1", name:"sub grid item 1", qty: 11},
+			 {id:"2", name:"sub grid item 2", qty: 3},
+			 {id:"3", name:"sub grid item 3", qty: 12},
+			 {id:"4", name:"sub grid item 4", qty: 5},
+			 {id:"5", name:"sub grid item 5", qty: 2},
+			 {id:"6", name:"sub grid item 6", qty: 9},
+			 {id:"7", name:"sub grid item 7", qty: 3},
+			 {id:"8", name:"sub grid item 8", qty: 8} --}}
 			];
 			
 			jQuery(function($) {
@@ -160,7 +166,7 @@
 					data: grid_data,
 					datatype: "local",
 					height: 350,
-					colNames:[' ', 'ID','Designation','Conditionnement', 'Lot', 'Fabricant', 'Quantite', 'Date Fab.','Exp. Date', 'Date Recu', 'Utlisé', 'Restants'],
+					colNames:[' ', 'ID','Code', 'Nom du Produit','date Recu', 'Type', 'Forme Galenique', 'Quantite recu', 'Date Fab.', 'Date Exp.','Lieu de Prelevement', 'Status'],
 
 					colModel:[
 						{name:'myac',index:'', width:80, fixed:true, sortable:false, resize:false,
@@ -174,16 +180,17 @@
 							}
 						},
 						{name:'id',index:'id', width:5, sorttype:"int", editable: true},
-						{name:'designation',index:'designation', width:10,editable: true,editoptions:{size:"20",maxlength:"30"}},
-						{name:'conditionnement',index:'conditionnement', width:10, editable: true},
-						{name:'lot',index:'lot', width:10, editable: true},
-                        {name:'fabricant',index:'fabricant', width:10, editable: true},
-						{name:'quantite',index:'quantite', width:10, editable: true},
-						{name:'dateFab',index:'dateFab',width:10, editable:true, sorttype:"date",unformat: pickDate},
-                        {name:'dateExp',index:'dateExp',width:10, editable:true, sorttype:"date",unformat: pickDate},
+                        {name:'code',index:'code', width:10, sorttype:"int", editable: true},
+						{name:'nomProduit',index:'nomProduit', width:10,editable: true,editoptions:{size:"20",maxlength:"30"}},
                         {name:'dateRecu',index:'dateRecu',width:10, editable:true, sorttype:"date",unformat: pickDate},
-                        {name:'utilise',index:'utilise', width:10, editable: true},
-                        {name:'restant',index:'restant', width:10, editable: true},
+                        {name:'type',index:'type', width:10, editable: true},
+                        {name:'formeGalenique',index:'formeGalenique', width:10,editable: true,editoptions:{size:"20",maxlength:"30"}},
+                        {name:'quantiteRecu',index:'quantiteRecu', width:10, editable: true},
+                        {name:'dateFab',index:'dateFab',width:10, editable:true, sorttype:"date",unformat: pickDate},
+                        {name:'dateExp',index:'dateExp',width:10, editable:true, sorttype:"date",unformat: pickDate},
+						{name:'lieuPrelevement',index:'lieuPrelevement', width:10, editable: true},
+						{name:'status',index:'status', width:10, editable: true},
+						
 					], 
 			
 					viewrecords : true,
@@ -209,7 +216,7 @@
 					},
 			
 					editurl: "/equipement/edit",//nothing is saved
-					caption: "Tableau des Reactifs"
+					caption: "Liste des Echantillons"
 			
 					//,autowidth: true,
 			

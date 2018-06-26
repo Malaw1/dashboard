@@ -20,15 +20,14 @@
 				<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> Nom du Produit </label>
 
 				<div class="col-sm-9">
-					<input type="text" id="form-field-1" name="nomProduit" class="col-xs-10 col-sm-5" />
+					<input type="text" id="form-field-1" name="nomProduit" value="{{$echantillons->nomProduit}}" class="col-xs-10 col-sm-5" />
 				</div>
 			</div>
 
 
 			<div class="form-group">
 				<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> Date de Reception </label>
-
-				<div class="col-sm-9">
+		<div class="col-sm-9">
 					<input type="date" id="form-field-1" name="dateRecep" class="col-xs-10 col-sm-5" />
 				</div>
 			</div>
@@ -37,7 +36,7 @@
 				<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> Type </label>
 
 				<div class="col-sm-9">
-					<select name="type" class="chosen-select form-control" id="form-field-select-3" data-placeholder="Choisir un type">
+					<select onchange="yesnoCheck(this);" name="type" class="chosen-select form-control" id="form-field-select-3" data-placeholder="Choisir un type">
 						<option value="">  </option>
 						<option value="medicament">Medicament</option>
 						<option value="vaccin">Vaccin</option>
@@ -46,6 +45,14 @@
 				</div>
 			</div>
 
+      <div class="form-group">
+				<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> Code </label>
+
+				<div class="col-sm-9">
+					<input type="text" id="demo" name="code" class="col-xs-10 col-sm-5" />
+				</div>
+      </div>
+      
 			<div class="form-group">
 				<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> Forme Galenique </label>
 
@@ -55,10 +62,18 @@
 			</div>
 
 			<div class="form-group">
+				<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> Conditionnement </label>
+
+				<div class="col-sm-9">
+					<input type="text" id="form-field-1" name="conditionnement" class="col-xs-10 col-sm-5" />
+				</div>
+			</div>
+
+			<div class="form-group">
 				<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> Quantite </label>
 
 				<div class="col-sm-9">
-					<input type="text" id="form-field-1" name="quantite" class="col-xs-10 col-sm-5" />
+					<input type="text" id="form-field-1" name="quantiteRecu" class="col-xs-10 col-sm-5" />
 				</div>
 			</div>
 
@@ -159,5 +174,35 @@
   modal.find('.modal-body input').val(recipient)
 })
 </script>
+
+<script>
+    function yesnoCheck(that) {
+
+        if (that.value == "medicament") {
+
+           // .toString().substr(-2)
+            
+            var d = new Date();
+            var n = d.getYear().toString().substr(-2);
+            var v = "M"+n + "{{$echantillons['id'] + 1}}"
+            document.getElementById("demo").value = v;
+        }
+        else if (that.value == "vaccin") {
+            
+            var d = new Date();
+            var n = d.getYear().substr(-2);
+            var v = "V"+n + "{{$echantillons['id'] + 1}}"
+            document.getElementById("demo").value = v;
+        }
+         else if (that.value == "autre"){
+            
+            var d = new Date();
+            var n = d.getYear().substr(-2);
+            var v = "O"+n + "{{$echantillons['id'] + 1}}"
+            document.getElementById("demo").value  = v;
+        }
+    }
+</script>
+
 
 @endsection

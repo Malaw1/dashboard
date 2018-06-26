@@ -45,8 +45,9 @@ class EquipementController extends Controller
             'societeContacter' => $request->input('societerContacter'),
             'dateInstallation' => $request->input('dateInstallation'),
             'documentTechDispo' => $request->input('documentTechDispo'),
+            'etat' => $request->input('etat'),
             'salle' => $request->input('salle'),
-            'commentaire' => $request->input('commentaire'),
+            'commentaires' => $request->input('commentaires'),
             'dateQualification' => $request->input('dateQualification'),
                         
         ]);

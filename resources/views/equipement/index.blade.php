@@ -1,37 +1,38 @@
-
 @extends('layouts.adminLayout.admin_design')
 @section('content')
 
-						<div class="page-header">
-							<h1>
-								Equipement
-								<small>
-									<i class="ace-icon fa fa-angle-double-right"></i>
-									Liste des Equipements
-								</small>
-							</h1>
-						</div><!-- /.page-header -->
+			<div class="page-header">
+				<h1>
+					Equipement
+					<small>
+						<i class="ace-icon fa fa-angle-double-right"></i>
+						Liste des Equipements
+					</small>
+				</h1>
+			</div><!-- /.page-header -->
 
-						<div class="row">
-							<div class="col-xs-12">
-								<!-- PAGE CONTENT BEGINS -->
-								<div class="alert alert-info">
-									<button class="close" data-dismiss="alert">
-										<i class="ace-icon fa fa-times"></i>
-									</button>
+			<div class="row">
+				<div class="col-xs-12">
+					<!-- PAGE CONTENT BEGINS -->
 
-									<i class="ace-icon fa fa-hand-o-right"></i>
-									Please note that demo server is not configured to save the changes, therefore you may see an error message.
-								</div>
+					<a href="{{url('equipement/create')}}" class="btn btn-primary">Nouvel Equipement</a>
+					{{-- <div class="alert alert-info">
+						<button class="close" data-dismiss="alert">
+							<i class="ace-icon fa fa-times"></i>
+						</button>
 
-								<table id="grid-table"></table>
+						<i class="ace-icon fa fa-hand-o-right"></i>
+						Please note that demo server is not configured to save the changes, therefore you may see an error message.
+					</div> --}}
 
-								<div id="grid-pager"></div>
+					<table id="grid-table"></table>
 
-								<!-- PAGE CONTENT ENDS -->
-							</div><!-- /.col -->
-						</div><!-- /.row -->
-					
+					<div id="grid-pager"></div>
+
+					<!-- PAGE CONTENT ENDS -->
+				</div><!-- /.col -->
+			</div><!-- /.row -->
+		
 
 
 			<a href="#" id="btn-scroll-up" class="btn-scroll-up btn btn-sm btn-inverse">
@@ -124,11 +125,7 @@
 				  }
 				})
 				*/
-				
-				
-			
-			
-			
+
 				jQuery(grid_selector).jqGrid({
 					//direction: "rtl",
 			
@@ -209,7 +206,7 @@
 						}, 0);
 					},
 			
-					editurl: "./dummy.php",//nothing is saved
+					editurl: "/equipement/edit",//nothing is saved
 					caption: "Tableau Dynamique des Equipements"
 			
 					//,autowidth: true,
@@ -248,7 +245,7 @@
 				//enable datepicker
 				function pickDate( cellvalue, options, cell ) {
 					setTimeout(function(){
-						$(cell) .find('input[type=text]')
+						$(cell) .find('input[type=text; name=date]')
 							.datepicker({format:'yyyy-mm-dd' , autoclose:true}); 
 					}, 0);
 				}
@@ -288,7 +285,7 @@
 						recreateForm: true,
 						viewPagerButtons: false,
 						mtype: 'POST',
-						url: '@Url.Action("GetData", "EquipementsController.store")',
+						url: ("EquipementsController.index"),
 						{{-- url: "{{ route('EquipementsController.store') }}" --}}
 						{{-- onclickSubmit: function(params, postdata){
 							params.url :

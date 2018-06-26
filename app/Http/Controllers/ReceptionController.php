@@ -14,7 +14,9 @@ class ReceptionController extends Controller
      */
     public function index()
     {
-        return view('Reception.index');
+        $recep = Reception::All();
+
+        return view('Reception.index', ['recep' => $recep]);
     }
 
     /**
@@ -24,7 +26,7 @@ class ReceptionController extends Controller
      */
     public function create()
     {
-        //
+        return view ('Reception.create');
     }
 
     /**
@@ -35,7 +37,16 @@ class ReceptionController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $addRecep = Reception::create([
+            'client_id' => $request->input('client_id'),
+            'dateRecep' => $request->input('dateRecep'),
+            'type' => $request->input('type'),
+            'observation' => $request->input('observation'),
+             ]);
+
+        if($addRecep){
+            return redirect()->route('reception.index', ['reception'=>$addRecep->id])->with('success', 'Reactifs ajouté avec succés');
+        }
     }
 
     /**
